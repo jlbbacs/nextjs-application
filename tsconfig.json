@@ -20,11 +20,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/lib/*": ["./app/lib/*"],
-      "@/action/*": ["./app/action/*"],
-      "@/generated/*": ["./generated/*"],
-      "@/*": ["./app/*"]
-    }
+  "@/*": ["./*"],
+  "@/generated/*": ["./generated/*"]
+}
   },
   "include": [
     "next-env.d.ts",
