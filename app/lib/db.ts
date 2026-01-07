@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import { PrismaLibSql } from '@prisma/adapter-libsql' // Note the lowercase 'ql'
+import { PrismaLibSql } from '@prisma/adapter-libsql'
 
-// Create the adapter directly with your Vercel/Turso variables
 const adapter = new PrismaLibSql({
   url: process.env.TURSO_DATABASE_URL!,
   authToken: process.env.TURSO_AUTH_TOKEN!,
@@ -9,7 +8,7 @@ const adapter = new PrismaLibSql({
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
-// Use the singleton pattern to avoid multiple connections in development
-export const db = globalForPrisma.prisma || new PrismaClient({ adapter })
+// Changed "db" to "prisma" to match your imports in action.ts and page.tsx
+export const prisma = globalForPrisma.prisma || new PrismaClient({ adapter })
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
