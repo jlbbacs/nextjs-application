@@ -33,7 +33,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
               <label className="block text-sm font-bold mb-2">Content</label>
               <textarea
                 name="content"
-                defaultValue={post.content} // Pre-fill the data
+                defaultValue={post.body} // Pre-fill the data
                 className="w-full px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-blue-500 min-h-[200px]"
               />
             </div>
