@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
-import { updatePost } from "@/action/action";
+import { updatePost } from "@/action/action"
 
 export default async function EditPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -33,7 +33,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
               <label className="block text-sm font-bold mb-2">Content</label>
               <textarea
                 name="content"
-                defaultValue={post.body} // Pre-fill the data
+                defaultValue={post.content} // Pre-fill the data
                 className="w-full px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-blue-500 min-h-[200px]"
               />
             </div>
