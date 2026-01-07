@@ -61,13 +61,13 @@ export default async function Page({
                         {post.content}
                     </p>
                     
-                    {/* {post.details && (
+                    {post.content && (
                         <div className="mt-12 p-8 bg-slate-50 border-l-4 border-blue-600 rounded-r-xl">
                             <p className="italic text-slate-500 text-lg">
-                                {post.details}
+                                {post.content}
                             </p>
                         </div>
-                    )} */}
+                    )}
                 </div>
             </article>
         </main>
