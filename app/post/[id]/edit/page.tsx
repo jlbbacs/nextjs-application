@@ -1,6 +1,6 @@
-import { prisma } from "@/app/lib/db";
+import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
-import { updatePost } from "@/app/action/action";
+import { updatePost } from "@/action/action";
 
 export default async function EditPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
