@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { createPost, deletePost } from "../action/action";
 import DeleteButton from "../components/deleteButton";
+export const dynamic = 'force-dynamic'; // Add this at the top of the file
 
 export default async function Page() {
   // Fetch all posts, newest first
