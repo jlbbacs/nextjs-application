@@ -25,7 +25,10 @@ export async function updatePost(formData: FormData) {
 
   await prisma.post.update({
     where: { id: Number(id) },
-    data: { title, body: content }
+    data: { 
+    title: title, 
+    content: content // This maps your 'content' variable to the 'body' column
+  },
   });
 
   revalidatePath("/post");
