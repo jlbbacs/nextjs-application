@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/db";
-import { updatePost } from "@/action/action";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -59,16 +58,16 @@ export default async function Page({
                 {/* Post Content */}
                 <div className="prose prose-slate max-w-none">
                     <p className="text-xl md:text-2xl text-slate-600 leading-relaxed whitespace-pre-wrap font-medium">
-                        {post.body}
+                        {post.content}
                     </p>
                     
-                    {post.details && (
+                    {/* {post.details && (
                         <div className="mt-12 p-8 bg-slate-50 border-l-4 border-blue-600 rounded-r-xl">
                             <p className="italic text-slate-500 text-lg">
                                 {post.details}
                             </p>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </article>
         </main>
