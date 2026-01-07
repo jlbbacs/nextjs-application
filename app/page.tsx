@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#030712] flex items-center justify-center px-6 overflow-hidden relative">
