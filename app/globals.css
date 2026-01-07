@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0066FF;
+  --color-card-bg: #FFFFFF;
+}
+
+html {
+  /* This forces the scrollbar to always exist */
+  overflow-y: scroll;
+}
