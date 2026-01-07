@@ -2,7 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { createPost, deletePost } from "../action/action";
 import DeleteButton from "../components/deleteButton";
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'; // Trigger build fix.
 
 
 export default async function Page() {
