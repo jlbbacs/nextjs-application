@@ -517,7 +517,7 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const PostScalarFieldEnum = {
   id: 'id',
   title: 'title',
-  body: 'body'
+  content: 'content'
 } as const
 
 export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]

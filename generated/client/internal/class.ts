@@ -20,7 +20,7 @@ const config: runtime.GetPrismaClientConfig = {
   "clientVersion": "7.2.0",
   "engineVersion": "0c8ef2ce45c83248ab3df073180d5eda9e8be7a3",
   "activeProvider": "sqlite",
-  "inlineSchema": "generator client {\n  provider = \"prisma-client\" // Note: This is the new Prisma 7 provider\n  output   = \"../generated/client\" // <--- ADD THIS LINE\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\nmodel Post {\n  id    Int    @id @default(autoincrement())\n  title String\n  body  String\n  // ... rest of your model\n}\n",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client\" // Note: This is the new Prisma 7 provider\n  output   = \"../generated/client\" // <--- ADD THIS LINE\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\nmodel Post {\n  id      Int    @id @default(autoincrement())\n  title   String\n  content String\n  // ... rest of your model\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},
@@ -28,7 +28,7 @@ const config: runtime.GetPrismaClientConfig = {
   }
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Post\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"body\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Post\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"content\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 
 async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Module> {
   const { Buffer } = await import('node:buffer')
