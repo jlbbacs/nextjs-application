@@ -1,15 +1,11 @@
-// app/lib/db.ts
-// We point directly to the generated index file
 import { PrismaClient } from '@prisma/client'
-import { PrismaLibSql } from '@prisma/adapter-libsql';
+import { PrismaLibSql } from '@prisma/adapter-libsql'
+import { createClient } from '@libsql/client'
 
+// In Prisma 7+, the adapter wants the configuration object
 const adapter = new PrismaLibSql({
   url: process.env.TURSO_DATABASE_URL!,
   authToken: process.env.TURSO_AUTH_TOKEN!,
 })
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient }
-
-export const prisma = globalForPrisma.prisma || new PrismaClient({ adapter })
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+export const db = new PrismaClient({ adapter })
