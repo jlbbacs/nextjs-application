@@ -87,7 +87,7 @@ export default async function Page() {
                 </h2>
 
                 <p className="text-slate-500 line-clamp-4 leading-relaxed mb-8">
-                  {post.body}
+                  {post.content}
                 </p>
               </div>
 
