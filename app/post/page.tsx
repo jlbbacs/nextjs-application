@@ -11,6 +11,24 @@ export default async function Page() {
     orderBy: { id: "desc" },
   });
 
+
+let posted = [];
+  
+  try {
+    posted = await prisma.post.findMany({
+      orderBy: { id: "desc" },
+    });
+  } catch (error: any) {
+    return (
+      <div className="p-10 bg-red-50 text-red-700 border border-red-200 m-10 rounded-xl">
+        <h1 className="font-bold text-xl">Database Connection Error</h1>
+        <p className="mt-2 text-sm font-mono">{error.message}</p>
+        <p className="mt-4 text-xs">Check Vercel Environment Variables for TURSO_DATABASE_URL</p>
+      </div>
+    );
+  }
+
+
   return (
     <main className="min-h-screen bg-[#F8FAFC] py-16 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
