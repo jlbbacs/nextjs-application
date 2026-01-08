@@ -1,5 +1,8 @@
-import { PrismaClient } from '@prisma/client'
+v// app/lib/db.ts
+import { PrismaClient } from '@prisma/client' // TypeScript now maps this to ./generated/client
 import { PrismaLibSql } from '@prisma/adapter-libsql'
+
+// ... the rest of your code remains the same
 
 const adapter = new PrismaLibSql({
   url: process.env.TURSO_DATABASE_URL!,
@@ -8,7 +11,7 @@ const adapter = new PrismaLibSql({
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
-// Changed "db" to "prisma" to match your imports in action.ts and page.tsx
+// Note: Exporting as 'prisma' to match your other files
 export const prisma = globalForPrisma.prisma || new PrismaClient({ adapter })
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma

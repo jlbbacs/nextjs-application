@@ -20,11 +20,12 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/lib/*": ["./app/lib/*"],
-      "@/action/*": ["./app/action/*"],
-      "@/generated/*": ["./generated/*"],
-      "@/*": ["./app/*"]
-    }
+  "@prisma/client": ["./generated/client"], // Add this specific line
+  "@/lib/*": ["./app/lib/*"],
+  "@/action/*": ["./app/action/*"],
+  "@/generated/*": ["./generated/*"],
+  "@/*": ["./app/*"]
+}
   },
   "include": [
     "next-env.d.ts",
