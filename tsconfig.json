@@ -20,7 +20,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-  "@prisma/client": ["./generated/client"], // Add this specific line
+  "@prisma/client": ["./generated/client/index"], // Add this specific line
   "@/lib/*": ["./app/lib/*"],
   "@/action/*": ["./app/action/*"],
   "@/generated/*": ["./generated/*"],
@@ -34,7 +34,9 @@
     "generated/**/*.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "generated/client/*.d.ts"
+
   ],
   "exclude": ["node_modules"]
 }
