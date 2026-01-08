@@ -13,4 +13,4 @@ const config = {
 const adapter = new PrismaLibSql(config)
 
 // 3. Initialize Prisma
-export const db = new PrismaClient({ adapter })
+export const prisma = new PrismaClient({ adapter })
