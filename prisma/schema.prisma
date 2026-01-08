@@ -2,16 +2,12 @@
 
 generator client {
   provider        = "prisma-client-js"
-  output          = "../generated/client"
-  // 1. ADD THIS LINE: This allows Prisma to use the Turso/LibSQL adapter
-  previewFeatures = ["driverAdapters"] 
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
   provider = "sqlite"
-  // 2. ADD THIS LINE: Even if you use an adapter, Prisma needs this 
-  // to satisfy its internal requirements during build time.
-  url      = env("TURSO_DATABASE_URL")
+  // REMOVE THE URL LINE COMPLETELY
 }
 
 model Post {
