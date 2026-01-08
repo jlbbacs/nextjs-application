@@ -1,17 +1,17 @@
 // prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
+  // Keep your output path if you changed it, otherwise:
   output   = "../generated/client"
-  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db" 
 }
 
 model Post {
   id      Int    @id @default(autoincrement())
-  title   string
-  content string
+  title   String
+  content String
 }
