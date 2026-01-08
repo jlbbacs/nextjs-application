@@ -1,4 +1,4 @@
-v// app/lib/db.ts
+
 import { PrismaClient } from '@prisma/client' // TypeScript now maps this to ./generated/client
 import { PrismaLibSql } from '@prisma/adapter-libsql'
 
