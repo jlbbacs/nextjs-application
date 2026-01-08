@@ -1,16 +1,17 @@
+// prisma/schema.prisma
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
+  output   = "../generated/client"
   previewFeatures = ["driverAdapters"]
-  output          = "../generated/client"
 }
 
 datasource db {
   provider = "sqlite"
+  url      = "file:./dev.db" 
 }
 
 model Post {
-  id    Int    @id @default(autoincrement())
-  title String
-  content  String
-  // ... rest of your model
+  id      Int    @id @default(autoincrement())
+  title   string
+  content string
 }
